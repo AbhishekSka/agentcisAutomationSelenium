@@ -3,6 +3,7 @@ package Forms;
 import Dirvers.DriverSetup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 /**
  * Hello world!
@@ -43,5 +44,19 @@ public class LeadsForm extends DriverSetup
     //Comments
     By LeadsComments = By.id("comment");
 
+    WebDriver wDriver;
 
+    public  LeadsForm(WebDriver wDriver)
+    {
+        this.wDriver = wDriver;
+    }
+
+    public void FillLeads(){
+        //Name
+        WebElement LName = wDriver.findElement(LeadName);
+        LName.sendKeys("");
+        WebElement LlastName = wDriver.findElement(LeadLastname);
+        LName.sendKeys("");
+
+    }
 }
