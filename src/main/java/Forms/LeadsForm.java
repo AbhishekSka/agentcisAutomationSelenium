@@ -23,7 +23,7 @@ public class LeadsForm extends DriverSetup
     By Leademail=By.id("email");
     By LeadSecondaryMail=By.id("secondary_email");
 
-    By Leadcontactpreference=By.name("//div[@]");
+    By Leadcontactpreference=By.xpath("//div/input[@name='first_point_of_contact']");
 
     //Address
     By LeadStreet=By.id("street");
