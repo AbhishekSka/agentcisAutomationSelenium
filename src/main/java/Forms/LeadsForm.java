@@ -4,6 +4,8 @@ import Dirvers.DriverSetup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -11,12 +13,13 @@ import java.util.List;
  * Hello world!
  *
  */
+@Test(description = "Leads" )
 public class LeadsForm extends DriverSetup
 {
     //name
     By LeadName = By.name("first_name");
     By LeadLastname = By.name("last_name");
-    By LeadDOB = By.id("");
+   // By LeadDOB = By.id("");
 
     //contact
     By LeadPhone= By.id("phone");
@@ -30,11 +33,11 @@ public class LeadsForm extends DriverSetup
     By LeadCity=By.id("city");
     By LeadState = By.id("state");
     By LeadZip = By.id("zip_code    ");
-    By LeadCountry = By.id("visa_type");
-    By LeadPassport = By.id("");
+    By LeadCountry = By.xpath("//div/select[@id='country']");
+    By LeadPassport = By.xpath("//div/select[@id='country_of_passport']");
 
     //Intrested services
-    By LeadServicesCheck = By.id("");
+    By LeadServicesCheck = By.className("ui doubling stackable three column grid paddingBlock padded dashed-line");
 
     //Other details
     By LeadperfIntake = By.id("");
@@ -54,40 +57,44 @@ public class LeadsForm extends DriverSetup
         this.wDriver = wDriver;
     }
 
-        public void FillLeads(){
-            //Name
-            WebElement LName = wDriver.findElement(LeadName);
-            LName.sendKeys("");
-            WebElement LlastName = wDriver.findElement(LeadLastname);
-            LName.sendKeys("");
-            WebElement LDOB = wDriver.findElement(LeadDOB);
+
+    public void FillLeads(){
+        //Name
+        WebElement LName = wDriver.findElement(LeadName);
+        LName.sendKeys("");
+        WebElement LlastName = wDriver.findElement(LeadLastname);
+        LName.sendKeys("");
+        //    WebElement LDOB = wDriver.findElement(LeadDOB);
 
 
-            //Contacts
-            wDriver.findElement(LeadPhone).sendKeys();
-            wDriver.findElement(Leademail).sendKeys();
-            wDriver.findElement(LeadSecondaryMail).sendKeys();
-
-            List<WebElement> leadpref=wDriver.findElements(Leadcontactpreference);
-            boolean select=leadpref.get(0).isSelected();
-            if (select==true){
-                leadpref.get(1).click();
-            }else{
-                leadpref.get(0).click();
-            }
-
-
-
-            //Address
-            wDriver.findElement(LeadStreet).sendKeys();
-            wDriver.findElement(LeadCity).sendKeys();
-            wDriver.findElement(LeadState).sendKeys();
-            wDriver.findElement(LeadZip).sendKeys();
-            wDriver.findElement(LeadCountry).sendKeys();
-            wDriver.findElement(LeadPassport).sendKeys();
+        //Contacts
+        wDriver.findElement(LeadPhone).sendKeys();
+        wDriver.findElement(Leademail).sendKeys();
+        wDriver.findElement(LeadSecondaryMail).sendKeys();
+        //Radio
+        List<WebElement> leadpref=wDriver.findElements(Leadcontactpreference);
+        boolean choose=leadpref.get(0).isSelected();
+        if (choose){
+            leadpref.get(1).click();
+        }else{
+            leadpref.get(0).click();
+        }
 
 
-            //Interested Services
+
+        //Address
+        wDriver.findElement(LeadStreet).sendKeys();
+        wDriver.findElement(LeadCity).sendKeys();
+        wDriver.findElement(LeadState).sendKeys();
+        wDriver.findElement(LeadZip).sendKeys();
+        //Country Dropdown
+        Select LCountryDropdown = new Select(wDriver.findElement(LeadCountry));
+        LCountryDropdown.selectByIndex(128);
+        //Passport
+        Select LPassportDropdown = new Select(wDriver.findElement(LeadPassport));
+        LPassportDropdown.selectByIndex(124);
+
+           /* //Interested Services
             wDriver.findElement(LeadServicesCheck).sendKeys();
 
             //Other details
@@ -100,6 +107,7 @@ public class LeadsForm extends DriverSetup
 
             //Comments
             wDriver.findElement(LeadsComments).sendKeys();
+*/
 
 
 
@@ -108,6 +116,5 @@ public class LeadsForm extends DriverSetup
 
 
 
-
-        }
+    }
 }
