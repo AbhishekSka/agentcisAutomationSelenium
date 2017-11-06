@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 
 public class DriverSetup {
     WebDriver wDriver;
+
     @BeforeClass
     public void setup() throws InterruptedException {
         wDriver =new ChromeDriver();
@@ -16,6 +17,7 @@ public class DriverSetup {
         wDriver.get("https://democis.agentcisapp.com/");
         wDriver.manage().window().maximize();
         Thread.sleep(1000);
+
         //Login
         WebElement login = wDriver.findElement(By.id("email"));
         login.sendKeys("avseqskya@gmail.com");
