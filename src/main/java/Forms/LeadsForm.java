@@ -58,6 +58,10 @@ public class LeadsForm extends DriverSetup
         this.wDriver = wDriver;
     }
 
+    public void Leadform(){
+        wDriver.
+    }
+
 
     public void FillLeads(){
         //Name
