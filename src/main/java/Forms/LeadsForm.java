@@ -52,13 +52,13 @@ public class LeadsForm extends DriverSetup
 
     WebDriver wDriver;
 
-    @Test(description = "Leads" )
+
     public  LeadsForm(WebDriver wDriver)
     {
         this.wDriver = wDriver;
     }
 
-    @Test(description = "Leads" )
+
     public void FillLeads(){
         //Name
         WebElement LName = wDriver.findElement(LeadName);
