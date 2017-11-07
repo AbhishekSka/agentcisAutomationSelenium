@@ -10,7 +10,8 @@ public class LeadsFromTest extends DriverSetup{
     @Test
     public void runtleadTest(){
         DriverSetup wDriver = new DriverSetup();
-        LeadsForm lTest = new LeadsForm((WebDriver) wDriver);
+        LeadsForm lTest = new LeadsForm(wDriver);
+        lTest.Leadform();
         lTest.FillLeads();
     }
 }
