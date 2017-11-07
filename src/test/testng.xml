@@ -1,0 +1,20 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Drivers" verbose="1" >
+<!--    <test name="DriversSetup" >
+        <classes>
+
+            <class name="Dirvers.DriverSetup"/>
+           &lt;!&ndash; <class name="com.first.example.demoTwo"/>
+            <class name="com.second.example.demoThree"/>
+            &ndash;&gt;
+        </classes>
+
+    </test>-->
+    <test name="LeadsForm">
+        <classes>
+            <class name="Forms.LeadsForm"/>
+        </classes>
+</test>
+</suite>
