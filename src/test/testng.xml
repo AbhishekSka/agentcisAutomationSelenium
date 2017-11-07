@@ -1,9 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Agetncis Automation">
-
-    <test name="Chrome Test">
-       <classes>
-            <class name="Forms.LeadsForm"/>
-        </classes>
-    </test>
-</suite>

@@ -13,10 +13,10 @@ public class DriverSetup {
     @BeforeClass
     public void setup() throws InterruptedException {
         wDriver =new ChromeDriver();
-        System.setProperty("webdriver.chrome.drive","/Users/introcept/Downloads/dmg/chrome.exe");
+       // System.setProperty("webdriver.chrome.drive","/Users/introcept/Downloads/dmg/chrome.exe");
         wDriver.get("https://democis.agentcisapp.com/");
         wDriver.manage().window().maximize();
-        Thread.sleep(1000);
+        Thread.sleep(10000);
 
         //Login
         WebElement login = wDriver.findElement(By.id("email"));
