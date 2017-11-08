@@ -5,9 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.Test;
+import org.testng.Reporter;
 
 import java.util.List;
+
 
 /**
  * Hello world!
@@ -16,6 +17,11 @@ import java.util.List;
 
 public class LeadsForm extends DriverSetup
 {
+    //clickForm
+    By clickLeadform =By.xpath("");
+    //By.xpath("//*[@id='wrapper']/nav/div/div[3]/ul/li[1]/a");
+    //By.xpath("//ul/li[@class='ag-top-toolbar__menu__item']");
+
     //name
     By LeadName = By.name("first_name");
     By LeadLastname = By.name("last_name");
@@ -52,14 +58,25 @@ public class LeadsForm extends DriverSetup
 
     WebDriver wDriver;
 
-
-    public  LeadsForm(WebDriver wDriver)
+    public  LeadsForm(WebDriver webDriver)
     {
-        this.wDriver = wDriver;
+        this.wDriver = webDriver;
     }
 
-    public void Leadform(){
-        wDriver.
+
+
+    //web form click
+    public void clickLeadform(){
+
+        WebElement webForm = wDriver.findElement(clickLeadform);
+
+        webForm.click();
+
+        String FormLink = String.valueOf(wDriver.getWindowHandles());
+        System.out.println("This is first window: "+FormLink);
+        for(String secondFormLink:wDriver.getWindowHandles()){
+            wDriver.switchTo().window(secondFormLink);
+        }
     }
 
 
@@ -69,7 +86,7 @@ public class LeadsForm extends DriverSetup
         LName.sendKeys("");
         WebElement LlastName = wDriver.findElement(LeadLastname);
         LName.sendKeys("");
-        //    WebElement LDOB = wDriver.findElement(LeadDOB);f
+        //    WebElement LDOB = wDriver.findElement(LeadDOB);
 
         //Contacts
         wDriver.findElement(LeadPhone).sendKeys();
@@ -98,7 +115,7 @@ public class LeadsForm extends DriverSetup
         Select LPassportDropdown = new Select(wDriver.findElement(LeadPassport));
         LPassportDropdown.selectByIndex(124);
 
-           /* //Interested Services
+        /* //Interested Services
             wDriver.findElement(LeadServicesCheck).sendKeys();
 
             //Other details
