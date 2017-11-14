@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 import java.util.List;
 import java.util.Set;
 
-public class DriverSetup {
+public class DriverSetup  {
 
 
     WebDriver wDriver;
