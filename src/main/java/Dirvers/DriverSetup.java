@@ -31,7 +31,7 @@ public class DriverSetup  {
         WebElement password = wDriver.findElement(By.id("password"));
         password.sendKeys("test1234");
         wDriver.findElement(By.xpath("//button[@class='loginButton']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
     }
 

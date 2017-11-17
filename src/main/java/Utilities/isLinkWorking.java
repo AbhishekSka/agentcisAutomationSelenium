@@ -4,8 +4,9 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-class isLinkOK{
-    public String isLinkWorking(URL url) throws IOException {
+public class isLinkWorking {
+
+    public String isLinkOK(URL url) throws IOException {
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         try{
