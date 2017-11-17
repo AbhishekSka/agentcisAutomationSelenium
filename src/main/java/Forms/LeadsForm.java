@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
 import java.util.List;
 
@@ -16,14 +17,15 @@ import java.util.List;
 
 public class LeadsForm extends DriverSetup
 {
+
     //clickForm
-    By clickLeadform = By.xpath("//*[@id=\"wrapper\"]/nav/div/div[3]/ul/li[1]/a");
-    By webForm = By.xpath("a[@class='ag-top-toolbar__menu__item__link']");
-    //"//ul/li[@class='ag-top-toolbar__menu__item']"
+    By clickform = By.xpath("//div[@class=\"ag-top-toolbar__right-section pull-right\"]/ul");
+    //By webForm = By.xpath("a[@class='ag-top-toolbar__menu__item__link']"); //*li[@class="ag-top-toolbar__menu__item"]
+    By webForm1=By.xpath("//li/a");
 
     By LeadName = By.name("first_name");
     By LeadLastname = By.name("last_name");
-   // By LeadDOB = By.id("");
+    // By LeadDOB = By.id("");
 
     //contact
     By LeadPhone= By.id("phone");
@@ -63,12 +65,15 @@ public class LeadsForm extends DriverSetup
 
 
     //web form click
-    public void clickLeadform(){
-
-       WebElement webForm = wDriver.findElement(clickLeadform);
+    public void clickLeadform() throws InterruptedException {
+        Reporter.log("here");
+        WebElement webForm = wDriver.findElement(clickform);
+        Reporter.log(String.valueOf(webForm));
+        List<WebElement> Form = webForm.findElements(webForm1);
+        System.out.println("form");
      // WebElement webFormLogo=webForm;
-       webForm.click();
-
+       Form.get(0).click();
+       Thread.sleep(3000);
 
 
         String FormLink = String.valueOf(wDriver.getWindowHandles());

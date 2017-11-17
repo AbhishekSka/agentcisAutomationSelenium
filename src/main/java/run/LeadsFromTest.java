@@ -10,7 +10,7 @@ public class LeadsFromTest extends DriverSetup{
     DriverSetup wDrivers;
 
     @Test
-    public void runtLeadTest(){
+    public void runtLeadTest() throws InterruptedException {
         wDrivers = new DriverSetup();
         LeadsForm lTest = new LeadsForm();
         lTest.clickLeadform();
