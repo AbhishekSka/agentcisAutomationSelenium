@@ -12,7 +12,7 @@ import java.util.Set;
 public class DriverSetup  {
 
 
-    WebDriver wDriver;
+    public WebDriver wDriver;
 
 
     @BeforeTest(alwaysRun = true)
@@ -21,15 +21,15 @@ public class DriverSetup  {
         System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
         //System.setProperty("webdriver.chrome.driver","/Users/introcept/Downloads/dmg/chrome.exe");
         wDriver = new ChromeDriver();
-        wDriver.get("https://democis.agentcisapp.com/");
+        wDriver.get("https://democis.staging.agentcis.com/auth/login");
         wDriver.manage().window().maximize();
         Thread.sleep(1000);
 
         //Login
         WebElement login = wDriver.findElement(By.id("email"));
-        login.sendKeys("avseqskya@gmail.com");
+        login.sendKeys("abhishek.shakya@introcept.co");
         WebElement password = wDriver.findElement(By.id("password"));
-        password.sendKeys("test1234");
+        password.sendKeys("agentcis");
         wDriver.findElement(By.xpath("//button[@class='loginButton']")).click();
         Thread.sleep(3000);
 

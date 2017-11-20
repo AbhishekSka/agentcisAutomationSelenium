@@ -6,13 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class LeadsFromTest extends DriverSetup{
-
-    DriverSetup wDrivers;
+   LeadsForm lTest;
 
     @Test
     public void runtLeadTest() throws InterruptedException {
-        wDrivers = new DriverSetup();
-        LeadsForm lTest = new LeadsForm();
+
+         lTest = new LeadsForm(wDriver);
         lTest.clickLeadform();
         lTest.FillLeads();
     }
