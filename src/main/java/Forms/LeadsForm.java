@@ -17,7 +17,7 @@ import java.util.List;
 
 public class LeadsForm extends DriverSetup
 {
-
+    DriverSetup webDriver=new DriverSetup();
     //clickForm
     By clickform = By.xpath("//div[@class=\"ag-top-toolbar__right-section pull-right\"]/ul");
     //By webForm = By.xpath("a[@class='ag-top-toolbar__menu__item__link']"); //*li[@class="ag-top-toolbar__menu__item"]
@@ -56,12 +56,13 @@ public class LeadsForm extends DriverSetup
     //Comments
     By LeadsComments = By.id("comment");
 
-    WebDriver wDriver;
 
-   /* public  LeadsForm(DriverSetup webDriver)
-    {
-        this.wDriver = webDriver;
-    }*/
+
+
+    public LeadsForm(WebDriver webDriver) {
+        this.wDriver =  webDriver;
+
+    }
 
 
     //web form click
