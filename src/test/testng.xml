@@ -14,7 +14,8 @@
     </test>-->
     <test name="LeadsForm">
         <classes>
-            <class name="run.LeadsFromTest"/>
+            <!--//<class name="run.LeadsFromTest"/>-->
+            <class name="Forms.OverallUrlCheckUp"/>
         </classes>
 </test>
 </suite>

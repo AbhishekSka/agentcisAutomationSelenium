@@ -17,22 +17,22 @@ import java.util.List;
 
 public class LeadsForm extends DriverSetup
 {
-    DriverSetup webDriver=new DriverSetup();
+
     //clickForm
     By clickform = By.xpath("//div[@class=\"ag-top-toolbar__right-section pull-right\"]/ul");
     //By webForm = By.xpath("a[@class='ag-top-toolbar__menu__item__link']"); //*li[@class="ag-top-toolbar__menu__item"]
     By webForm1=By.xpath("//li/a");
 
-    By LeadName = By.name("first_name");
-    By LeadLastname = By.name("last_name");
+    By LeadName = By.id("first_name");
+    By LeadLastname = By.id("last_name");
     // By LeadDOB = By.id("");
+
 
     //contact
     By LeadPhone= By.id("phone");
     By Leademail=By.id("email");
     By LeadSecondaryMail=By.id("secondary_email");
-
-    By Leadcontactpreference=By.xpath("//div/input[@name='first_point_of_contact']");
+    By Leadcontactpreference=By.xpath("//div[@name='inline fields']/div");
 
     //Address
     By LeadStreet=By.id("street");
@@ -89,15 +89,16 @@ public class LeadsForm extends DriverSetup
 
         //Name
         WebElement LName = wDriver.findElement(LeadName);
-        LName.sendKeys("");
+        LName.sendKeys("Kuro");
         WebElement LlastName = wDriver.findElement(LeadLastname);
-        LName.sendKeys("");
+        LName.sendKeys("Mitsuki");
         //    WebElement LDOB = wDriver.findElement(LeadDOB);
 
         //Contacts
-        wDriver.findElement(LeadPhone).sendKeys();
-        wDriver.findElement(Leademail).sendKeys();
-        wDriver.findElement(LeadSecondaryMail).sendKeys();
+        wDriver.findElement(LeadPhone).sendKeys("+123458-799");
+        wDriver.findElement(Leademail).sendKeys("avseqskya+kuro@gmail.com");
+        wDriver.findElement(LeadSecondaryMail).sendKeys("avseqskya@gmail.com");
+
         //Radio
         List<WebElement> leadpref=wDriver.findElements(Leadcontactpreference);
         boolean choose=leadpref.get(0).isSelected();
@@ -110,10 +111,10 @@ public class LeadsForm extends DriverSetup
 
 
         //Address
-        wDriver.findElement(LeadStreet).sendKeys();
-        wDriver.findElement(LeadCity).sendKeys();
-        wDriver.findElement(LeadState).sendKeys();
-        wDriver.findElement(LeadZip).sendKeys();
+        wDriver.findElement(LeadStreet).sendKeys("MangalBazar");
+        wDriver.findElement(LeadCity).sendKeys("Lalitpur");
+        wDriver.findElement(LeadState).sendKeys("Central");
+        wDriver.findElement(LeadZip).sendKeys("1234");
         //Country Dropdown
         Select LCountryDropdown = new Select(wDriver.findElement(LeadCountry));
         LCountryDropdown.selectByIndex(128);
