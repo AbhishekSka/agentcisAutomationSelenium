@@ -4,10 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
-
-import java.util.List;
-import java.util.Set;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 public class DriverSetup  {
 
@@ -19,16 +17,16 @@ public class DriverSetup  {
     public void setup() throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
-        //System.setProperty("webdriver.chrome.driver","/Users/introcept/Downloads/dmg/chrome.exe");
+        //System.setProperty("webdriver.chrome.driver","/Abhishek/chrome.exe");
         wDriver = new ChromeDriver();
         wDriver.get("https://democis.staging.agentcis.com/auth/login");
         wDriver.manage().window().maximize();
         Thread.sleep(1000);
 
-        //Login
-        WebElement login = wDriver.findElement(By.id("email"));
-        login.sendKeys("abhishek.shakya@introcept.co");
-        WebElement password = wDriver.findElement(By.id("password"));
+        //Filling Login for and enter
+        //WebElement login = wDriver.findElement(By.cssSelector("input#email"));
+        wDriver.findElement(By.xpath("//input[@id='email']")).sendKeys("dummymail1642@gmail.com");
+        WebElement password = wDriver.findElement(By.cssSelector("input#password"));
         password.sendKeys("agentcis");
         wDriver.findElement(By.xpath("//button[@class='loginButton']")).click();
         Thread.sleep(3000);

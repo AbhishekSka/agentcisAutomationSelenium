@@ -8,8 +8,8 @@ import org.openqa.selenium.WebElement;
 public class DatePicker extends DriverSetup {
 
     WebDriver driver;
-    public DatePicker(WebDriver wDriver){
-        this.driver = wDriver;
+    public DatePicker(WebDriver webDriver){
+        this.wDriver = webDriver;
 
     }
 
