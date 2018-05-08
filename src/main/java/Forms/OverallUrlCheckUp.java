@@ -20,7 +20,7 @@ public class OverallUrlCheckUp extends DriverSetup {
 
 
     // Side nav
-    By sideNav = By.xpath("//ul[@class='ag-side-nav__menu ag-scroll']/li");
+    By sideNav = By.xpath("//ul[@class='ag-side-nav__menu ag-scroll']/li/a");
 
     //Dashboard
    /* By Dashboard=
@@ -81,21 +81,32 @@ public class OverallUrlCheckUp extends DriverSetup {
     public void linkCheck() throws IOException {
 
         //LOGIN
-        isLinkWorking.isLinkOK(username);
-        Assert.assertTrue(true,"Link is ok");
+        String login=isLinkWorking.isLinkOK(username);
+        Assert.assertEquals(login,"OK");
 
         //DASHBOARD
         List<WebElement> links = wDriver.findElements(sideNav);
         if(links.size()<14){
             for(int i=0;i<links.size();i++) {
                 WebElement singleLinks = links.get(i);
-                URL url=new URL(singleLinks.getAttribute("href"));
-                isLinkWorking.isLinkOK(url);
-                Reporter.log("Dashboard link Ok");
-                //findElement(By.xpath("//a"))
-            }
+                String script = "javascript:void(0)";
+                if (singleLinks.getAttribute("href") != null ) {
+                    String href = (singleLinks.getAttribute("href")).toString();
+
+                        URL url = new URL(singleLinks.getAttribute("href"));
+                        isLinkWorking.isLinkOK(url);
+                        System.out.println(href);
+                    }
+                else {
+                    System.out.println("No link found");
+                }
 
         }
 
+
+        //Client
+
+
     }
+}
 }
