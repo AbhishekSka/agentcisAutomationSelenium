@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -14,12 +15,23 @@ public class DriverSetup  {
 
 
     @BeforeTest(alwaysRun = true)
-    public void setup() throws InterruptedException {
+    public void setup(ChromeOptions chromeOptions) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
-        //System.setProperty("webdriver.chrome.driver","/Abhishek/chrome.exe");
+        //Ubuntu
+
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+ //       chromeOptions.addArguments("--headless");
+//        chromeOptions.addArguments("--no-sandbox");
+
+//       Mac
+//       System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver/chromedriver.exe");
+//       Settings for windows
+//       System.setProperty("webdriver.chrome.driver","/Abhishek/chrome.exe");
+//       System.setProperty("webdriver.chrome.driver", "usr/bin/chromedriver");
+
         wDriver = new ChromeDriver();
         wDriver.get("https://democis.staging.agentcis.com/auth/login");
+        Thread.sleep(Long.parseLong("3000"));
         wDriver.manage().window().maximize();
         Thread.sleep(1000);
 
@@ -29,7 +41,7 @@ public class DriverSetup  {
         WebElement password = wDriver.findElement(By.cssSelector("input#password"));
         password.sendKeys("agentcis");
         wDriver.findElement(By.xpath("//button[@class='loginButton']")).click();
-        Thread.sleep(3000);
+        Thread.sleep(10000);
 
     }
 

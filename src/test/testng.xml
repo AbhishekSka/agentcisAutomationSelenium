@@ -12,18 +12,18 @@
         </classes>
 
     </test>-->
-    <test name="Dashboard">
+<!--    <test name="Dashboard">
         <classes>
-            <!--//<class name="run.LeadsFromTest"/>-->
+            &lt;!&ndash;//<class name="run.LeadsFromTest"/>&ndash;&gt;
             <class name="Forms.DashBoard"/>
         </classes>
-    </test>
+    </test>-->
 
 
     <test name="LeadsForm">
         <classes>
             <!--//<class name="run.LeadsFromTest"/>-->
-            <class name="Forms.LeadsForm"/>
+            <class name="run.OverallUrlCheckUpTest"/>
         </classes>
     </test>
 </suite>
