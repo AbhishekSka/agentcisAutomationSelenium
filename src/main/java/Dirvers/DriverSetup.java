@@ -5,23 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.Reporter;
+import org.testng.annotations.*;
 
-public class DriverSetup  {
+public class DriverSetup {
+
+
+
 
 
     public WebDriver wDriver;
-
-
-    @BeforeTest(alwaysRun = true)
-    public void setup(ChromeOptions chromeOptions) throws InterruptedException {
-
+    @BeforeTest
+    public void setup() throws InterruptedException {
         //Ubuntu
-
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
- //       chromeOptions.addArguments("--headless");
-//        chromeOptions.addArguments("--no-sandbox");
+//        chromeOptions.addArguments("--headless");
+//;        chromeOptions.addArguments("--no-sandbox");
 
 //       Mac
 //       System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver/chromedriver.exe");
@@ -46,8 +45,10 @@ public class DriverSetup  {
     }
 
 
-    @AfterTest(alwaysRun = true)
+    @AfterSuite
+
     public void driverQuit() {
+        Reporter.log("this is running");
         wDriver.quit();
     }
 

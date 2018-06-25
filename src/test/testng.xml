@@ -2,7 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Drivers" verbose="1" >
-<!--    <test name="DriversSetup" >
+<!--    <parameter name="browser" value="chrome"></parameter>-->
+ <!--   <test name="DriversSetup" >
         <classes>
 
             <class name="Dirvers.DriverSetup"/>
@@ -10,8 +11,8 @@
             <class name="com.second.example.demoThree"/>
             &ndash;&gt;
         </classes>
-
     </test>-->
+
 <!--    <test name="Dashboard">
         <classes>
             &lt;!&ndash;//<class name="run.LeadsFromTest"/>&ndash;&gt;
@@ -19,8 +20,7 @@
         </classes>
     </test>-->
 
-
-    <test name="LeadsForm">
+    <test name="CheckUrl">
         <classes>
             <!--//<class name="run.LeadsFromTest"/>-->
             <class name="run.OverallUrlCheckUpTest"/>
