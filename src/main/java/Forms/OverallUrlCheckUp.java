@@ -16,19 +16,20 @@ import java.util.List;
 public class OverallUrlCheckUp extends DriverSetup {
 
     //Login Page
-   URL username = new URL("https://democis.staging.agentcis.com/auth/login");
+    URL username = new URL("https://democis.staging.agentcis.com/auth/login");
 
 
     // Side nav
     By sideNav = By.xpath("//ul[@class='ag-side-nav__menu ag-scroll']/li/a");
 
     //Dashboard
-   /* By Dashboard=
+    By contacts = By.cssSelector("div.ui.doubling.stackable.stretched.four.column.grid >p");
 
 
 
 
-    //Client
+
+ /*   //Client
     By Leads=
     By Prospects=
     By Clients
@@ -66,47 +67,52 @@ public class OverallUrlCheckUp extends DriverSetup {
     By Task=
     By AssigneToMe=
     By AllTasks=
-    By CompletedTasks=
-
-
-*/
+    By CompletedTasks=*/
 
 
     //Report
 
- public OverallUrlCheckUp(WebDriver webDriver) throws MalformedURLException {
+    public OverallUrlCheckUp(WebDriver webDriver) throws MalformedURLException {
         this.wDriver = webDriver;
     }
 
     public void linkCheck() throws IOException {
 
         //LOGIN
-        String login=isLinkWorking.isLinkOK(username);
-        Assert.assertEquals(login,"OK");
+        String login = isLinkWorking.isLinkOK(username);
+        Assert.assertEquals(login, "OK");
 
         //DASHBOARD
         List<WebElement> links = wDriver.findElements(sideNav);
-        if(links.size()<14){
-            for(int i=0;i<links.size();i++) {
+        if (links.size() < 14) {
+            for (int i = 0; i < links.size(); i++) {
                 WebElement singleLinks = links.get(i);
-                String script = "javascript:void(0)";
-                if (singleLinks.getAttribute("href") != null ) {
-                    String href = (singleLinks.getAttribute("href")).toString();
+                //String script = "javascript:void(0)";
+                if (singleLinks.getAttribute("href") != null) {
+                    String href = (singleLinks.getAttribute("href"));
 
-                        URL url = new URL(singleLinks.getAttribute("href"));
-                        isLinkWorking.isLinkOK(url);
-                        System.out.println(href);
-                    }
-                else {
+                    URL url = new URL(singleLinks.getAttribute("href"));
+                    isLinkWorking.isLinkOK(url);
+                    System.out.println(href);
+                } else {
                     System.out.println("No link found");
                 }
 
+
+                //Contacts
+                List<WebElement> topContactCount = wDriver.findElements(contacts);
+                if (topContactCount != null) {
+                    for (i=0;i<topContactCount.size();i++) {
+                        WebElement contact = topContactCount.get(i);
+                        WebElement contactLink = contact.findElement(By.cssSelector("div."));
+                        String href = contactLink.getAttribute("");
+                    }
+                }
+
+
+
+
+            }
         }
-
-
-        //Client
-
-
     }
-}
 }
