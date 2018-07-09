@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/agentcisAutomation.iml" filepath="$PROJECT_DIR$/agentcisAutomation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/automation.iml" filepath="$PROJECT_DIR$/automation.iml" />
     </modules>
   </component>
 </project>
