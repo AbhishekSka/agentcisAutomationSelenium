@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="040fe87f-55ed-46a1-8774-d95bd5b82b26" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agentcisAutomation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/agentcisAutomation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/automation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Feature/Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/Feature/Login.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BDDTests/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BDDTests/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dirvers/DriverSetup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Forms/DashBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Forms/LeadsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Forms/LeadsForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Forms/OverallUrlCheckUp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TestNGRun/LeadsFromTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestNGRun/LeadsFromTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TestNGRun/OverallUrlCheckUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestNGRun/OverallUrlCheckUpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/DatePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/DatePicker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/DropdownPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilities/DropdownPicker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utilities/isLinkWorking.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Dirvers/DriverSetup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Forms/DashBoard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Forms/LeadsForm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Forms/OverallUrlCheckUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Utilities/DatePicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utilities/DatePicker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Utilities/DropdownPicker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utilities/DropdownPicker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Utilities/isLinkWorking.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/run/LeadsFromTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/run/OverallUrlCheckUpTest.class" beforeDir="false" />
-    </list>
+    <list default="true" id="040fe87f-55ed-46a1-8774-d95bd5b82b26" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
