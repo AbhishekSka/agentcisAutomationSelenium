@@ -1,13 +1,13 @@
-package run;
+package main.java.TestNGRun;
 
-import Dirvers.DriverSetup;
-import Forms.OverallUrlCheckUp;
+
+import main.java.Dirvers.DriverSet;
+import main.java.Smoke.OverallUrlCheckUp;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
-public class OverallUrlCheckUpTest extends DriverSetup{
+public class OverallUrlCheckUpTest extends DriverSet {
     OverallUrlCheckUp overallUrlCheckUp;
 
     @Test
