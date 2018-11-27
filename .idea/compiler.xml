@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="agentcisAutomation" />
+        <module name="automation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="agentcisAutomation" target="1.5" />
+      <module name="automation" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

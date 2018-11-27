@@ -1,6 +1,6 @@
-package main.java.TestNGRun;
+package TestNGRun;
 
-import main.java.Dirvers.DriverSet;
+import Dirvers.DriverSet;
 import main.java.Forms.LeadsForm;
 import org.testng.annotations.Test;
 

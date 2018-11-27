@@ -1,8 +1,8 @@
-package main.java.TestNGRun;
+package TestNGRun;
 
 
-import main.java.Dirvers.DriverSet;
-import main.java.Smoke.OverallUrlCheckUp;
+import Dirvers.DriverSet;
+import Smoke.OverallUrlCheckUp;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
