@@ -2,9 +2,15 @@
 
 <suite name="Check" verbose="1" >
 
-    <test name="OverallCheck" >
+ <!--   <test name="OverallCheck" >
         <classes>
-            <class name="TestNGRun.OverallUrlCheckUpTest" />
+            <class name="TestNGRun.LeadsFromTest" />
+        </classes>
+    </test> -->
+
+    <test name="load" >
+        <classes>
+            <class name="TestNGRun.LeadsFromTest" />
         </classes>
     </test>
 

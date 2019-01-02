@@ -10,10 +10,6 @@ import org.testng.annotations.BeforeTest;
 
 public class DriverSet {
 
-
-
-
-
     protected WebDriver wDriver;
     @BeforeTest
     public void setup() throws InterruptedException {
@@ -29,14 +25,22 @@ public class DriverSet {
 //       System.setProperty("webdriver.chrome.driver", "usr/bin/chromedriver");
 
         wDriver = new ChromeDriver();
-        wDriver.get("https://democis.staging.agentcis.com/auth/login");
+
+/*       //Live
+        wDriver.get("https://democis.agentcisapp.com/auth/login");
         Thread.sleep(Long.parseLong("3000"));
         wDriver.manage().window().maximize();
         Thread.sleep(1000);
+        wDriver.findElement(By.xpath("//input[@id='email']")).sendKeys("sushan.amatya@gmail.com");
+        WebElement password = wDriver.findElement(By.cssSelector("input#password"));
+        password.sendKeys("agentcis");*/
 
-        //Filling Login for and enter
-        //WebElement login = wDriver.findElement(By.cssSelector("input#email"));
-        wDriver.findElement(By.xpath("//input[@id='email']")).sendKeys("dummymail1642@gmail.com");
+        //Staging
+        wDriver.get("https://360test.agentcisapp.com/");
+//        Thread.sleep(Long.parseLong("3000"));
+//        wDriver.manage().window().maximize();
+        Thread.sleep(1000);
+        wDriver.findElement(By.xpath("//input[@id='email']")).sendKeys("dummymail1642+admin@gmail.com");
         WebElement password = wDriver.findElement(By.cssSelector("input#password"));
         password.sendKeys("agentcis");
         wDriver.findElement(By.xpath("//button[@class='loginButton']")).click();

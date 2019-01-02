@@ -22,7 +22,7 @@ public class OverallUrlCheckUp extends DriverSet {
     By sideNav = By.xpath("//ul[@class='ag-side-nav__menu ag-scroll']/li/a");
 
     //Dashboard
-    By contacts = By.linkText("Dashboard");
+    By contacts = By.xpath("//a[@data-content=\"Clients\"]");
 
     //By.cssSelector("div.ui.doubling.stackable.stretched.four.column.grid >p");
 

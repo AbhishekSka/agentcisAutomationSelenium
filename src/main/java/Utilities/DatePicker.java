@@ -17,10 +17,18 @@ public class DatePicker extends DriverSet {
 
     public void datepick() {
 
-        WebElement RootPicker = (WebElement) wdriver.findElements(By.id("//div[@id='datepicker-1509442930369']"));
-        WebElement pickYear = RootPicker.findElement(By.className("//div[@class='flatpickr-month']/div/input[@class*='cur-year']"));
-        pickYear.sendKeys("1991");
-        //WebElement pickMonth=RootPicker.findElement(By.);
+        String date = "12-09-2018";
+        String dateArray[] = date.split("-"); //(12,08,2018)
+        String day=dateArray[0];
+        String month = dateArray[1];
+        String year=dateArray[2];
+
+        //Choose date modal
+        WebElement datePicker = (WebElement) wdriver.findElements(By.id("//div[@class='flatpickr-calendar animate arrowTop']"));
+        datePicker.click();
+
+        String beforePath = "";
+        String afterPah = "";
 
 
     }

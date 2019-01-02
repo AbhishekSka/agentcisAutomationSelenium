@@ -1,7 +1,7 @@
 package TestNGRun;
 
 import Dirvers.DriverSet;
-import main.java.Forms.LeadsForm;
+import Forms.LeadsForm;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -10,7 +10,7 @@ public class LeadsFromTest extends DriverSet {
     LeadsForm lTest;
 
     @Test
-    public void runtLeadTest() throws IOException {
+    public void runtLeadTest() throws IOException, InterruptedException {
 
         lTest = new LeadsForm(wDriver);
         lTest.EnterEnquiry();

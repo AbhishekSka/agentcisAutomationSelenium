@@ -1,4 +1,4 @@
-package main.java.Forms;
+package Forms;
 
 
 import Dirvers.DriverSet;
@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
@@ -19,17 +20,18 @@ import java.util.Properties;
 public class LeadsForm extends DriverSet {
 
     //clickForm
-    By enquiryModule = By.xpath("//a[contains(@href,\"https://democis.agentcisapp.com/lead-forms\")]");
-    //By webForm = By.xpath("a[@class='ag-top-toolbar__menu__item__link']"); //*li[@class="ag-top-toolbar__menu__item"]
-    By enquiryForm = By.xpath("/online-form/blahblehblew");
+    By enquiryModule = By.xpath("//a[contains(@href,\"https://360test.agentcisapp.com/lead-forms\")]");
 
-    By enquiryName = By.name("first_name");
-    By enquiryLastname = By.name("last_name");
+    //By webForm = By.xpath("a[@class='ag-top-toolbar__menu__item__link']"); //*li[@class="ag-top-toolbar__menu__item"]
+    By enquiryForm = By.xpath("//tr[2]/td[2]/a[contains(@href,\"/online-form/all\")]");
+
+    By enquiryName = By.id("first_name");
+    By enquiryLastname = By.id("last_name");
     // By enquiryDOB = By.id("");
 
 
     //contact
-    By enquiryAccordion = By.className("");
+    //By enquiryAccordion = By.className("");
     By enquiryPhone = By.name("phone");
     By enquiryEmail = By.name("email");
     By enquirySecondaryMail = By.name("secondary_email");
@@ -37,9 +39,9 @@ public class LeadsForm extends DriverSet {
 
     //Address
     By enquiryStreet = By.name("street");
-    By enquiryCity = By.name("city");
+    By enquiryCity = By.id("city");
     By enquiryState = By.name("state");
-    By enquiryZip = By.name("zip_code");
+    By enquiryZip = By.id("postal_code");
     By enquiryCountry = By.name("country");
 
     //Current visa info
@@ -60,6 +62,9 @@ public class LeadsForm extends DriverSet {
     //Comments
     // By enquiryComments = By.id("comment");
 
+    //Submit blue button
+    By submit = By.xpath("//button[@class=\"button blue-button\"]");
+
 
     public LeadsForm(WebDriver webDriver) {
         this.wDriver = webDriver;
@@ -68,53 +73,54 @@ public class LeadsForm extends DriverSet {
 
 
     //web form click
-    public void EnterEnquiry() {
+    public void EnterEnquiry() throws InterruptedException {
 
         wDriver.findElement(enquiryModule).click();
 
-        wDriver.findElement(enquiryForm);
+        Thread.sleep(3000);
 
-      /*Reporter.log("here");
-        WebElement webForm = wDriver.findElement(enquiryModule);
-        Reporter.log(String.valueOf(webForm));
-        List<WebElement> Form = webForm.findElements(webForm1);
-        System.out.println("form");
-     // WebElement webFormLogo=webForm;
-        Form.get(0).click();
+        //Get the current window handle
+        String windowHandle = wDriver.getWindowHandle();
+
+        wDriver.findElement(enquiryForm).click();
+        Thread.sleep(3000);
+
+        //Use the list of window handles to switch between windows
+        for (String newTab : wDriver.getWindowHandles()) {
+            if (!newTab.equals(windowHandle)) {
+
+                wDriver.switchTo().window(newTab);
+            }
+        }
+
         Thread.sleep(3000);
 
 
-        String FormLink = String.valueOf(wDriver.getWindowHandles());
-        System.out.println("This is first window: "+FormLink);
-        for(String secondFormLink:wDriver.getWindowHandles()){
-            wDriver.switchTo().window(secondFormLink);
-        }*/
     }
 
 
-    public void FillEnquiry() throws IOException {
+    public void FillEnquiry() throws IOException, InterruptedException {
 
         //Initializing properties
         Properties globalProperties = new Properties();
-        FileInputStream individualProperties = new FileInputStream(
-                "/media/introcept-nepal/New Volume/Abhishek/AutomateHP/agentcisAutomationSelenium/src/configure.properties");
+        File propfile = new File("resources/config.properties");
+        FileInputStream individualProperties = new FileInputStream(propfile);
         globalProperties.load(individualProperties);
-
 
         //Name
         wDriver.findElement(enquiryName)
-                .sendKeys(globalProperties.getProperty("firstName"));
+                .sendKeys(globalProperties.getProperty("first_name"));
         wDriver.findElement(enquiryLastname)
-                .sendKeys(globalProperties.getProperty("LastName"));
+                .sendKeys(globalProperties.getProperty("last_name"));
         //WebElement LDOB = wDriver.findElement(LeadDOB);
 
         //Contacts
         wDriver.findElement(enquiryPhone)
                 .sendKeys(globalProperties.getProperty("phoneNo"));
         wDriver.findElement(enquiryEmail)
-                .sendKeys(globalProperties.getProperty("mailId"));
+                .sendKeys(globalProperties.getProperty("mail"));
         wDriver.findElement(enquirySecondaryMail)
-                .sendKeys(globalProperties.getProperty("secondaryMailId"));
+                .sendKeys(globalProperties.getProperty("secondary_email"));
 
         //Radio
         List<WebElement> leadpref = wDriver.findElements(enquiryContactpreference);
@@ -127,13 +133,13 @@ public class LeadsForm extends DriverSet {
 
         //Address
         wDriver.findElement(enquiryStreet)
-                .sendKeys(globalProperties.getProperty("streetName"));
+                .sendKeys(globalProperties.getProperty("street_name"));
         wDriver.findElement(enquiryCity)
-                .sendKeys(globalProperties.getProperty("cityName"));
+                .sendKeys(globalProperties.getProperty("city_name"));
         wDriver.findElement(enquiryState)
-                .sendKeys(globalProperties.getProperty("stateName"));
+                .sendKeys(globalProperties.getProperty("state_name"));
         wDriver.findElement(enquiryZip)
-                .sendKeys(globalProperties.getProperty("zip"));
+                .sendKeys(globalProperties.getProperty("zip_code"));
 
 
         //Country Dropdown
@@ -157,7 +163,8 @@ public class LeadsForm extends DriverSet {
             //Comments
             wDriver.findElement(LeadsComments).sendKeys();
 */
-
-
+            //Submit
+        wDriver.findElement(submit).click();
+        Thread.sleep(3000);
     }
 }
